@@ -47,6 +47,7 @@ class Qubit:
     }
 
     def __init__(self, num_qubits):
+        assert num_qubits < 32, 'This lib support at most 31 qubits.'
         self.num_qubits = num_qubits
         self.amplitudes = np.zeros((np.ones(num_qubits) * 2).astype(int).tolist()).astype(np.complex64)
         self.amplitudes[tuple(np.zeros(num_qubits).astype(int)[:, np.newaxis].tolist())] = 1
@@ -128,7 +129,7 @@ class Qubit:
 
     def multi_controlled_gate(self, gate, qubit_index, control_index_list):
         assert gate in Qubit.single_qubit_gates.keys(), \
-            'gate should be one from "X, Y, Z, H, S, T, Id, SDagger, TDagger"'
+            'Gate should be one from "X, Y, Z, H, S, T, Id, SDagger, TDagger"'
         _apply_gate(self.amplitudes, Qubit.single_qubit_gates[gate], qubit_index, control_index_list)
 
     def multi_controlled_rx(self, theta, qubit_index, control_index_list):

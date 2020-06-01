@@ -18,3 +18,31 @@ pip:
 $ pip install gquantum
 ```
 
+## Getting Started
+
+The basic element in quantum computing is **qubit**. You can initialize several qubits with the class ``Qubit()`` in GQuantum:
+
+.. code-block:: python
+
+    import gquantum as gq
+    
+    qu = gq.Qubit(2)
+    
+Similar to logic gates in traditional computer, **quantum gates** are used to manipulate the state of qubit:
+
+.. code-block:: python
+
+    qu.h(0)
+    qu.cnot(0, 1)
+
+The **H** gate changed the first qubit from state |0> to superposition between |0> and |1>. The **CNOT** gate entangled the first qubit with the second qubit.
+
+
+The function ``measure()`` is used to observe the state of qubit:
+
+.. code-block:: python
+
+    print(qu.measure(0))
+    print(qu.measure(1))
+
+Because these two qubits above are entangled, the outputs of measurements should be both |0> or |1>.

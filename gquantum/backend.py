@@ -1,3 +1,5 @@
+"""This module contains internal operations on amplitudes of qubits."""
+
 import numpy as np
 
 

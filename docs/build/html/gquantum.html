@@ -1,0 +1,786 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>gquantum package &mdash; GQuantum 0.2.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'./',
+              VERSION:'0.2.0',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> GQuantum
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">gquantum package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-gquantum.backend">gquantum.backend module</a></li>
+<li><a class="reference internal" href="#module-gquantum.qubit">gquantum.qubit module</a></li>
+<li><a class="reference internal" href="#module-gquantum">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">GQuantum</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>gquantum package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/gquantum.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="gquantum-package">
+<h1>gquantum package<a class="headerlink" href="#gquantum-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-gquantum.backend">
+<span id="gquantum-backend-module"></span><h2>gquantum.backend module<a class="headerlink" href="#module-gquantum.backend" title="Permalink to this headline">¶</a></h2>
+<p>This module contains internal operations on amplitudes of qubits.</p>
+</div>
+<div class="section" id="module-gquantum.qubit">
+<span id="gquantum-qubit-module"></span><h2>gquantum.qubit module<a class="headerlink" href="#module-gquantum.qubit" title="Permalink to this headline">¶</a></h2>
+<p>This module contains initialization and operation on qubits.</p>
+<p>This module contains all main quantum gates and measurements on quantum
+computation. Initializes the class Qubit with the number of required qubits,
+and then uses the quantum gates and measurements as functions inside the
+class.</p>
+<dl class="class">
+<dt id="gquantum.qubit.Qubit">
+<em class="property">class </em><code class="descclassname">gquantum.qubit.</code><code class="descname">Qubit</code><span class="sig-paren">(</span><em>num_qubits</em><span class="sig-paren">)</span><a class="headerlink" href="#gquantum.qubit.Qubit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p>Creates qubits register.</p>
+<dl class="attribute">
+<dt id="gquantum.qubit.Qubit.num_qubits">
+<code class="descname">num_qubits</code><a class="headerlink" href="#gquantum.qubit.Qubit.num_qubits" title="Permalink to this definition">¶</a></dt>
+<dd><p>The number of qubits in register.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="gquantum.qubit.Qubit.amplitudes">
+<code class="descname">amplitudes</code><a class="headerlink" href="#gquantum.qubit.Qubit.amplitudes" title="Permalink to this definition">¶</a></dt>
+<dd><p>The amplitudes of qubits in register.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="gquantum.qubit.Qubit.ccnot">
+<code class="descname">ccnot</code><span class="sig-paren">(</span><em>control_index_1</em>, <em>control_index_2</em>, <em>target_index</em><span class="sig-paren">)</span><a class="headerlink" href="#gquantum.qubit.Qubit.ccnot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the CCNOT(toffoli) gate to three qubits.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>control_index_1</strong> &#8211; Index of the first control qubit, starts from 0.</li>
+<li><strong>control_index_2</strong> &#8211; Index of the second control qubit, starts from 0.</li>
+<li><strong>target_index</strong> &#8211; Index of the target qubit, starts from 0.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gquantum.qubit.Qubit.cnot">
+<code class="descname">cnot</code><span class="sig-paren">(</span><em>control_index</em>, <em>target_index</em><span class="sig-paren">)</span><a class="headerlink" href="#gquantum.qubit.Qubit.cnot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the controlled-NOT(CNOT) gate to a pair of qubits.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>control_index</strong> &#8211; Index of the control qubit, starts from 0.</li>
+<li><strong>target_index</strong> &#8211; Index of the target qubit, starts from 0.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gquantum.qubit.Qubit.cx">
+<code class="descname">cx</code><span class="sig-paren">(</span><em>control_index</em>, <em>target_index</em><span class="sig-paren">)</span><a class="headerlink" href="#gquantum.qubit.Qubit.cx" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the controlled-NOT(CX) gate to a pair of qubits.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>control_index</strong> &#8211; Index of the control qubit, starts from 0.</li>
+<li><strong>target_index</strong> &#8211; Index of the target qubit, starts from 0.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gquantum.qubit.Qubit.h">
+<code class="descname">h</code><span class="sig-paren">(</span><em>qubit_index</em><span class="sig-paren">)</span><a class="headerlink" href="#gquantum.qubit.Qubit.h" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the Hadamard transformation to a qubit.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>qubit_index</strong> &#8211; Index of qubit to which the gate should be applied, starts from 0.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gquantum.qubit.Qubit.id">
+<code class="descname">id</code><span class="sig-paren">(</span><em>qubit_index</em><span class="sig-paren">)</span><a class="headerlink" href="#gquantum.qubit.Qubit.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the Identity gate to a qubit.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>qubit_index</strong> &#8211; Index of qubit to which the gate should be applied, starts from 0.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gquantum.qubit.Qubit.measure">
+<code class="descname">measure</code><span class="sig-paren">(</span><em>qubit_index</em><span class="sig-paren">)</span><a class="headerlink" href="#gquantum.qubit.Qubit.measure" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs a measurement of a single qubit in computational(Pauli Z) basis.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>qubit_index</strong> &#8211; Index of qubit to be measured, starts from 0.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">&#8220;0&#8221; or &#8220;1&#8221; as type string. Represent the state <a href="#id1"><span class="problematic" id="id2">|</span></a>0&gt; and <a href="#id3"><span class="problematic" id="id4">|</span></a>1&gt; .</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gquantum.qubit.Qubit.measure_x">
+<code class="descname">measure_x</code><span class="sig-paren">(</span><em>qubit_index</em><span class="sig-paren">)</span><a class="headerlink" href="#gquantum.qubit.Qubit.measure_x" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs a measurement of a single qubit in Pauli X basis.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>qubit_index</strong> &#8211; Index of qubit to be measured, starts from 0.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">&#8220;0&#8221; or &#8220;1&#8221; as type string. Represent the state <a href="#id5"><span class="problematic" id="id6">|</span></a>0&gt; and <a href="#id7"><span class="problematic" id="id8">|</span></a>1&gt; .</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gquantum.qubit.Qubit.measure_y">
+<code class="descname">measure_y</code><span class="sig-paren">(</span><em>qubit_index</em><span class="sig-paren">)</span><a class="headerlink" href="#gquantum.qubit.Qubit.measure_y" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs a measurement of a single qubit in Pauli Y basis.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>qubit_index</strong> &#8211; Index of qubit to be measured, starts from 0.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">&#8220;0&#8221; or &#8220;1&#8221; as type string. Represent the state <a href="#id9"><span class="problematic" id="id10">|</span></a>0&gt; and <a href="#id11"><span class="problematic" id="id12">|</span></a>1&gt; .</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gquantum.qubit.Qubit.measure_z">
+<code class="descname">measure_z</code><span class="sig-paren">(</span><em>qubit_index</em><span class="sig-paren">)</span><a class="headerlink" href="#gquantum.qubit.Qubit.measure_z" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs a measurement of a single qubit in Pauli Z(computational) basis.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>qubit_index</strong> &#8211; Index of qubit to be measured, starts from 0.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">&#8220;0&#8221; or &#8220;1&#8221; as type string. Represent the state <a href="#id13"><span class="problematic" id="id14">|</span></a>0&gt; and <a href="#id15"><span class="problematic" id="id16">|</span></a>1&gt; .</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gquantum.qubit.Qubit.multi_controlled_gate">
+<code class="descname">multi_controlled_gate</code><span class="sig-paren">(</span><em>gate</em>, <em>qubit_index</em>, <em>control_index_list</em><span class="sig-paren">)</span><a class="headerlink" href="#gquantum.qubit.Qubit.multi_controlled_gate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies a specific gate to a qubit with controls of other qubits.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>gate</strong> &#8211; Specific gate to be executed. comes from
+&#8220;X, Y, Z, H, S, T, Id, SDagger, TDagger&#8221;.</li>
+<li><strong>qubit_index</strong> &#8211; Index of the target qubit, starts from 0.</li>
+<li><strong>control_index_list</strong> &#8211; List of indices of the control qubits,
+the index in this list should starts from 0.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gquantum.qubit.Qubit.multi_controlled_rx">
+<code class="descname">multi_controlled_rx</code><span class="sig-paren">(</span><em>theta</em>, <em>qubit_index</em>, <em>control_index_list</em><span class="sig-paren">)</span><a class="headerlink" href="#gquantum.qubit.Qubit.multi_controlled_rx" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the RX gate to a qubit with controls of other qubits.</p>
+<p>The RX gate manipulates a qubit as a rotation with an angle theta
+about X-axis.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>theta</strong> &#8211; Angle about which the qubit is to be rotated.</li>
+<li><strong>qubit_index</strong> &#8211; Index of the target qubit, starts from 0.</li>
+<li><strong>control_index_list</strong> &#8211; List of indices of the control qubits,
+the index in this list should starts from 0.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gquantum.qubit.Qubit.multi_controlled_ry">
+<code class="descname">multi_controlled_ry</code><span class="sig-paren">(</span><em>theta</em>, <em>qubit_index</em>, <em>control_index_list</em><span class="sig-paren">)</span><a class="headerlink" href="#gquantum.qubit.Qubit.multi_controlled_ry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the RY gate to a qubit with controls of other qubits.</p>
+<p>The RY gate manipulates a qubit as a rotation with an angle theta
+about Y-axis.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>theta</strong> &#8211; Angle about which the qubit is to be rotated.</li>
+<li><strong>qubit_index</strong> &#8211; Index of the target qubit, starts from 0.</li>
+<li><strong>control_index_list</strong> &#8211; List of indices of the control qubits,
+the index in this list should starts from 0.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gquantum.qubit.Qubit.multi_controlled_rz">
+<code class="descname">multi_controlled_rz</code><span class="sig-paren">(</span><em>theta</em>, <em>qubit_index</em>, <em>control_index_list</em><span class="sig-paren">)</span><a class="headerlink" href="#gquantum.qubit.Qubit.multi_controlled_rz" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the RZ gate to a qubit with controls of other qubits.</p>
+<p>The RZ gate manipulates a qubit as a rotation with an angle theta
+about Z-axis.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>theta</strong> &#8211; Angle about which the qubit is to be rotated.</li>
+<li><strong>qubit_index</strong> &#8211; Index of the target qubit, starts from 0.</li>
+<li><strong>control_index_list</strong> &#8211; List of indices of the control qubits,
+the index in this list should starts from 0.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gquantum.qubit.Qubit.multi_qubit_measure">
+<code class="descname">multi_qubit_measure</code><span class="sig-paren">(</span><em>qubit_index_list</em><span class="sig-paren">)</span><a class="headerlink" href="#gquantum.qubit.Qubit.multi_qubit_measure" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs measurements of qubits in computational(Pauli Z) basis.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>qubit_index_list</strong> &#8211; List of indices of qubits to be measured,
+the index in this list should starts from 0.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A list with elements &#8220;0&#8221; or &#8220;1&#8221; as type string, which represent the
+state <a href="#id17"><span class="problematic" id="id18">|</span></a>0&gt; and <a href="#id19"><span class="problematic" id="id20">|</span></a>1&gt; for qubits with the descending order.<p>example:</p>
+<p>[&#8216;1&#8217;, &#8216;0&#8217;, &#8216;0&#8217;]</p>
+<p>The &#8216;1&#8217; represents the state <a href="#id21"><span class="problematic" id="id22">|</span></a>1&gt; for the qubit with the biggest index.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gquantum.qubit.Qubit.reset">
+<code class="descname">reset</code><span class="sig-paren">(</span><em>qubit_index</em><span class="sig-paren">)</span><a class="headerlink" href="#gquantum.qubit.Qubit.reset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reset a qubit to <a href="#id23"><span class="problematic" id="id24">|</span></a>0&gt;.</p>
+<p>When the qubit is entangled with other qubits, those qubits would also
+collapse with the role of quantum measurement.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>qubit_index</strong> &#8211; Index of qubit to which the gate should be applied, starts from 0.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gquantum.qubit.Qubit.reset_all">
+<code class="descname">reset_all</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gquantum.qubit.Qubit.reset_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reset all qubits to <a href="#id25"><span class="problematic" id="id26">|</span></a>0&gt;.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="gquantum.qubit.Qubit.rx">
+<code class="descname">rx</code><span class="sig-paren">(</span><em>theta</em>, <em>qubit_index</em><span class="sig-paren">)</span><a class="headerlink" href="#gquantum.qubit.Qubit.rx" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the RX gate to a qubit.</p>
+<p>The RX gate manipulates a qubit as a rotation with an angle theta
+about X-axis.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>theta</strong> &#8211; Angle about which the qubit is to be rotated.</li>
+<li><strong>qubit_index</strong> &#8211; Index of qubit to which the gate should be applied, starts from 0.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gquantum.qubit.Qubit.ry">
+<code class="descname">ry</code><span class="sig-paren">(</span><em>theta</em>, <em>qubit_index</em><span class="sig-paren">)</span><a class="headerlink" href="#gquantum.qubit.Qubit.ry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the RY gate to a qubit.</p>
+<p>The RY gate manipulates a qubit as a rotation with an angle theta
+about Y-axis.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>theta</strong> &#8211; Angle about which the qubit is to be rotated.</li>
+<li><strong>qubit_index</strong> &#8211; Index of qubit to which the gate should be applied, starts from 0.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gquantum.qubit.Qubit.rz">
+<code class="descname">rz</code><span class="sig-paren">(</span><em>theta</em>, <em>qubit_index</em><span class="sig-paren">)</span><a class="headerlink" href="#gquantum.qubit.Qubit.rz" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the RZ gate to a qubit.</p>
+<p>The RZ gate manipulates a qubit as a rotation with an angle theta
+about Z-axis.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>theta</strong> &#8211; Angle about which the qubit is to be rotated.</li>
+<li><strong>qubit_index</strong> &#8211; Index of qubit to which the gate should be applied, starts from 0.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gquantum.qubit.Qubit.s">
+<code class="descname">s</code><span class="sig-paren">(</span><em>qubit_index</em><span class="sig-paren">)</span><a class="headerlink" href="#gquantum.qubit.Qubit.s" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the π/4 phase gate to a qubit.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>qubit_index</strong> &#8211; Index of qubit to which the gate should be applied, starts from 0.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gquantum.qubit.Qubit.s_dagger">
+<code class="descname">s_dagger</code><span class="sig-paren">(</span><em>qubit_index</em><span class="sig-paren">)</span><a class="headerlink" href="#gquantum.qubit.Qubit.s_dagger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the adjoint of S gate to a qubit.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>qubit_index</strong> &#8211; Index of qubit to which the gate should be applied, starts from 0.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gquantum.qubit.Qubit.simulator_func_get_amplitudes">
+<code class="descname">simulator_func_get_amplitudes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gquantum.qubit.Qubit.simulator_func_get_amplitudes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the amplitudes of this quantum register.</p>
+<p>This function is not directly performable on a real quantum computer.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="gquantum.qubit.Qubit.simulator_func_load_amplitudes">
+<code class="descname">simulator_func_load_amplitudes</code><span class="sig-paren">(</span><em>file='amplitudes.npy'</em><span class="sig-paren">)</span><a class="headerlink" href="#gquantum.qubit.Qubit.simulator_func_load_amplitudes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load the amplitudes of this quantum register to a file.</p>
+<p>This function is not directly performable on a real quantum computer.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> &#8211; Path to the file to load amplitudes.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gquantum.qubit.Qubit.simulator_func_multi_measure_without_collapse">
+<code class="descname">simulator_func_multi_measure_without_collapse</code><span class="sig-paren">(</span><em>qubit_index_list</em>, <em>measure_times</em><span class="sig-paren">)</span><a class="headerlink" href="#gquantum.qubit.Qubit.simulator_func_multi_measure_without_collapse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs measurements several times without collapse.</p>
+<p>This function is not directly performable on a real quantum computer.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>qubit_index_list</strong> &#8211; List of indices of qubits to be measured,
+the index in this list should starts from 0.</li>
+<li><strong>measure_times</strong> &#8211; Number of times to perform measurements.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><p>A dict with keys as measured states and values as numbers of
+times measured in that states. The qubits represented are
+in descending order.</p>
+<p>example:</p>
+<p>{&#8216;00&#8217;: 490, &#8216;11&#8217;: 510}</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gquantum.qubit.Qubit.simulator_func_save_amplitudes">
+<code class="descname">simulator_func_save_amplitudes</code><span class="sig-paren">(</span><em>file='amplitudes.npy'</em><span class="sig-paren">)</span><a class="headerlink" href="#gquantum.qubit.Qubit.simulator_func_save_amplitudes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save the amplitudes of this quantum register to a file.</p>
+<p>This function is not directly performable on a real quantum computer.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> &#8211; Path to the file to save amplitudes.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gquantum.qubit.Qubit.swap">
+<code class="descname">swap</code><span class="sig-paren">(</span><em>qubit_1_index</em>, <em>qubit_2_index</em><span class="sig-paren">)</span><a class="headerlink" href="#gquantum.qubit.Qubit.swap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the SWAP gate to a pair of qubits.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>qubit_1_index</strong> &#8211; Index of the first qubit to be swapped, starts from 0.</li>
+<li><strong>qubit_2_index</strong> &#8211; Index of the first qubit to be swapped, starts from 0.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gquantum.qubit.Qubit.t">
+<code class="descname">t</code><span class="sig-paren">(</span><em>qubit_index</em><span class="sig-paren">)</span><a class="headerlink" href="#gquantum.qubit.Qubit.t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the π/8 phase gate to a qubit.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>qubit_index</strong> &#8211; Index of qubit to which the gate should be applied, starts from 0.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gquantum.qubit.Qubit.t_dagger">
+<code class="descname">t_dagger</code><span class="sig-paren">(</span><em>qubit_index</em><span class="sig-paren">)</span><a class="headerlink" href="#gquantum.qubit.Qubit.t_dagger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the adjoint of T gate to a qubit.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>qubit_index</strong> &#8211; Index of qubit to which the gate should be applied, starts from 0.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gquantum.qubit.Qubit.toffoli">
+<code class="descname">toffoli</code><span class="sig-paren">(</span><em>control_index_1</em>, <em>control_index_2</em>, <em>target_index</em><span class="sig-paren">)</span><a class="headerlink" href="#gquantum.qubit.Qubit.toffoli" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the toffoli(CCNOT) gate to three qubits.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>control_index_1</strong> &#8211; Index of the first control qubit, starts from 0.</li>
+<li><strong>control_index_2</strong> &#8211; Index of the second control qubit, starts from 0.</li>
+<li><strong>target_index</strong> &#8211; Index of the target qubit, starts from 0.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gquantum.qubit.Qubit.x">
+<code class="descname">x</code><span class="sig-paren">(</span><em>qubit_index</em><span class="sig-paren">)</span><a class="headerlink" href="#gquantum.qubit.Qubit.x" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the Pauli X gate to a qubit.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>qubit_index</strong> &#8211; Index of qubit to which the gate should be applied, starts from 0.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gquantum.qubit.Qubit.y">
+<code class="descname">y</code><span class="sig-paren">(</span><em>qubit_index</em><span class="sig-paren">)</span><a class="headerlink" href="#gquantum.qubit.Qubit.y" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the Pauli Y gate to a qubit.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>qubit_index</strong> &#8211; Index of qubit to which the gate should be applied, starts from 0.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gquantum.qubit.Qubit.z">
+<code class="descname">z</code><span class="sig-paren">(</span><em>qubit_index</em><span class="sig-paren">)</span><a class="headerlink" href="#gquantum.qubit.Qubit.z" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the Pauli Z gate to a qubit.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>qubit_index</strong> &#8211; Index of qubit to which the gate should be applied, starts from 0.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-gquantum">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-gquantum" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Yangzhe Liu
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

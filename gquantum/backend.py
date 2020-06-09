@@ -58,18 +58,19 @@ def _measure(amplitudes, measure_list = [0]):
 
 
 def _collapse(amplitudes, measure_list, measure_result_list):
+    measure_list.sort()
+    measure_list.reverse()
     qubit_num = len(amplitudes.shape)
     new_amplitudes = np.zeros_like(amplitudes)
-    amplitudes_parameter = "["
-
+    amplitudes_parameter = "]"
     for i in range(qubit_num):
         if i in measure_list:
             if measure_result_list[measure_list.index(i)] == "0":
-                amplitudes_parameter = amplitudes_parameter + "0,"
+                amplitudes_parameter = "0," + amplitudes_parameter
             else:
-                amplitudes_parameter = amplitudes_parameter + "1,"
+                amplitudes_parameter = "1," + amplitudes_parameter
         else:
-            amplitudes_parameter = amplitudes_parameter + ":,"
-    amplitudes_parameter = amplitudes_parameter + "]"
+            amplitudes_parameter = ":," + amplitudes_parameter
+    amplitudes_parameter = "[" + amplitudes_parameter
     exec("new_amplitudes"+amplitudes_parameter+" = "+ "amplitudes" + amplitudes_parameter)
     amplitudes[...] = new_amplitudes/np.linalg.norm(new_amplitudes)

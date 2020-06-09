@@ -4,14 +4,6 @@ This module contains all main quantum gates and measurements on quantum
 computation. Initializes the class Qubit with the number of required qubits,
 and then uses the quantum gates and measurements as functions inside the
 class.
-
-  Typical usage example:
-
-  qu = gq.Qubit(2)
-  qu.h(0)
-  qu.cnot(0, 1)
-  result_0 = qu.measure(0)
-  result_1 = qu.measure(1)
 """
 
 import numpy as np
@@ -25,48 +17,6 @@ class Qubit:
         num_qubits: The number of qubits in register.
         amplitudes: The amplitudes of qubits in register.
     """
-    single_qubit_gates = {
-        # Pauli-X / Not Gate
-        'X': np.matrix([
-            [0, 1],
-            [1, 0]
-        ]),
-        # Pauli-Y Gate
-        'Y': np.matrix([
-            [0, -1j],
-            [1j, 0]
-        ]),
-        # Pauli-Z Gate
-        'Z': np.matrix([
-            [1, 0],
-            [0, -1]
-        ]),
-        # Hadamard Gate
-        'H': np.multiply(1. / np.sqrt(2), np.matrix([
-            [1, 1],
-            [1, -1]
-        ])),
-        # Identity Gate
-        'Id': np.eye(2),
-        # S & S Dagger Gate
-        'S': np.matrix([
-            [1, 0],
-            [0, 1j]
-        ]),
-        'SDagger': np.matrix([
-            [1, 0],
-            [0, 1j]
-        ]).conjugate().transpose(),
-        # T & T Dagger / Pi over 8 Gate
-        'T': np.matrix([
-            [1, 0],
-            [0, np.e ** (1j * np.pi / 4.)]
-        ]),
-        'TDagger': np.matrix([
-            [1, 0],
-            [0, np.e ** (1j * np.pi / 4.)]
-        ]).conjugate().transpose()
-    }
 
     def __init__(self, num_qubits):
         """Initializes Qubit with the number of qubits."""
@@ -74,6 +24,48 @@ class Qubit:
         self.num_qubits = num_qubits
         self.amplitudes = np.zeros((np.ones(num_qubits) * 2).astype(int).tolist()).astype(np.complex64)
         self.amplitudes[tuple(np.zeros(num_qubits).astype(int)[:, np.newaxis].tolist())] = 1
+        self._single_qubit_gates = {
+            # Pauli-X / Not Gate
+            'X': np.matrix([
+                [0, 1],
+                [1, 0]
+            ]),
+            # Pauli-Y Gate
+            'Y': np.matrix([
+                [0, -1j],
+                [1j, 0]
+            ]),
+            # Pauli-Z Gate
+            'Z': np.matrix([
+                [1, 0],
+                [0, -1]
+            ]),
+            # Hadamard Gate
+            'H': np.multiply(1. / np.sqrt(2), np.matrix([
+                [1, 1],
+                [1, -1]
+            ])),
+            # Identity Gate
+            'Id': np.eye(2),
+            # S & S Dagger Gate
+            'S': np.matrix([
+                [1, 0],
+                [0, 1j]
+            ]),
+            'SDagger': np.matrix([
+                [1, 0],
+                [0, 1j]
+            ]).conjugate().transpose(),
+            # T & T Dagger / Pi over 8 Gate
+            'T': np.matrix([
+                [1, 0],
+                [0, np.e ** (1j * np.pi / 4.)]
+            ]),
+            'TDagger': np.matrix([
+                [1, 0],
+                [0, np.e ** (1j * np.pi / 4.)]
+            ]).conjugate().transpose()
+        }
 
     def h(self, qubit_index):
         """Applies the Hadamard transformation to a qubit.
@@ -81,7 +73,7 @@ class Qubit:
         Args:
             qubit_index: Index of qubit to which the gate should be applied, starts from 0.
         """
-        _apply_gate(self.amplitudes, Qubit.single_qubit_gates["H"], qubit_index)
+        _apply_gate(self.amplitudes, self._single_qubit_gates["H"], qubit_index)
 
     def x(self, qubit_index):
         """Applies the Pauli X gate to a qubit.
@@ -89,7 +81,7 @@ class Qubit:
         Args:
             qubit_index: Index of qubit to which the gate should be applied, starts from 0.
         """
-        _apply_gate(self.amplitudes, Qubit.single_qubit_gates["X"], qubit_index)
+        _apply_gate(self.amplitudes, self._single_qubit_gates["X"], qubit_index)
 
     def y(self, qubit_index):
         """Applies the Pauli Y gate to a qubit.
@@ -97,7 +89,7 @@ class Qubit:
         Args:
             qubit_index: Index of qubit to which the gate should be applied, starts from 0.
         """
-        _apply_gate(self.amplitudes, Qubit.single_qubit_gates["Y"], qubit_index)
+        _apply_gate(self.amplitudes, self._single_qubit_gates["Y"], qubit_index)
 
     def z(self, qubit_index):
         """Applies the Pauli Z gate to a qubit.
@@ -105,7 +97,7 @@ class Qubit:
         Args:
             qubit_index: Index of qubit to which the gate should be applied, starts from 0.
         """
-        _apply_gate(self.amplitudes, Qubit.single_qubit_gates["Z"], qubit_index)
+        _apply_gate(self.amplitudes, self._single_qubit_gates["Z"], qubit_index)
 
     def s(self, qubit_index):
         """Applies the π/4 phase gate to a qubit.
@@ -113,7 +105,7 @@ class Qubit:
         Args:
             qubit_index: Index of qubit to which the gate should be applied, starts from 0.
         """
-        _apply_gate(self.amplitudes, Qubit.single_qubit_gates["S"], qubit_index)
+        _apply_gate(self.amplitudes, self._single_qubit_gates["S"], qubit_index)
 
     def t(self, qubit_index):
         """Applies the π/8 phase gate to a qubit.
@@ -121,7 +113,7 @@ class Qubit:
         Args:
             qubit_index: Index of qubit to which the gate should be applied, starts from 0.
         """
-        _apply_gate(self.amplitudes, Qubit.single_qubit_gates["T"], qubit_index)
+        _apply_gate(self.amplitudes, self._single_qubit_gates["T"], qubit_index)
 
     def id(self, qubit_index):
         """Applies the Identity gate to a qubit.
@@ -129,7 +121,7 @@ class Qubit:
         Args:
             qubit_index: Index of qubit to which the gate should be applied, starts from 0.
         """
-        _apply_gate(self.amplitudes, Qubit.single_qubit_gates["Id"], qubit_index)
+        _apply_gate(self.amplitudes, self._single_qubit_gates["Id"], qubit_index)
 
     def s_dagger(self, qubit_index):
         """Applies the adjoint of S gate to a qubit.
@@ -137,7 +129,7 @@ class Qubit:
         Args:
             qubit_index: Index of qubit to which the gate should be applied, starts from 0.
         """
-        _apply_gate(self.amplitudes, Qubit.single_qubit_gates["SDagger"], qubit_index)
+        _apply_gate(self.amplitudes, self._single_qubit_gates["SDagger"], qubit_index)
 
     def t_dagger(self, qubit_index):
         """Applies the adjoint of T gate to a qubit.
@@ -145,7 +137,7 @@ class Qubit:
         Args:
             qubit_index: Index of qubit to which the gate should be applied, starts from 0.
         """
-        _apply_gate(self.amplitudes, Qubit.single_qubit_gates["TDagger"], qubit_index)
+        _apply_gate(self.amplitudes, self._single_qubit_gates["TDagger"], qubit_index)
 
     def rx(self, theta, qubit_index):
         """Applies the RX gate to a qubit.
@@ -212,7 +204,7 @@ class Qubit:
             control_index: Index of the control qubit, starts from 0.
             target_index: Index of the target qubit, starts from 0.
         """
-        _apply_gate(self.amplitudes, Qubit.single_qubit_gates["X"], target_index, [control_index])
+        _apply_gate(self.amplitudes, self._single_qubit_gates["X"], target_index, [control_index])
 
     def cnot(self, control_index, target_index):
         """Applies the controlled-NOT(CNOT) gate to a pair of qubits.
@@ -221,7 +213,7 @@ class Qubit:
             control_index: Index of the control qubit, starts from 0.
             target_index: Index of the target qubit, starts from 0.
         """
-        _apply_gate(self.amplitudes, Qubit.single_qubit_gates["X"], target_index, [control_index])
+        _apply_gate(self.amplitudes, self._single_qubit_gates["X"], target_index, [control_index])
 
     def toffoli(self, control_index_1, control_index_2, target_index):
         """Applies the toffoli(CCNOT) gate to three qubits.
@@ -231,7 +223,7 @@ class Qubit:
             control_index_2: Index of the second control qubit, starts from 0.
             target_index: Index of the target qubit, starts from 0.
         """
-        _apply_gate(self.amplitudes, Qubit.single_qubit_gates["X"], target_index, [control_index_1, control_index_2])
+        _apply_gate(self.amplitudes, self._single_qubit_gates["X"], target_index, [control_index_1, control_index_2])
 
     def ccnot(self, control_index_1, control_index_2, target_index):
         """Applies the CCNOT(toffoli) gate to three qubits.
@@ -241,7 +233,7 @@ class Qubit:
             control_index_2: Index of the second control qubit, starts from 0.
             target_index: Index of the target qubit, starts from 0.
         """
-        _apply_gate(self.amplitudes, Qubit.single_qubit_gates["X"], target_index, [control_index_1, control_index_2])
+        _apply_gate(self.amplitudes, self._single_qubit_gates["X"], target_index, [control_index_1, control_index_2])
 
     def swap(self, qubit_1_index, qubit_2_index):
         """Applies the SWAP gate to a pair of qubits.
@@ -250,9 +242,9 @@ class Qubit:
             qubit_1_index: Index of the first qubit to be swapped, starts from 0.
             qubit_2_index: Index of the first qubit to be swapped, starts from 0.
         """
-        _apply_gate(self.amplitudes, Qubit.single_qubit_gates["X"], qubit_2_index, [qubit_1_index])
-        _apply_gate(self.amplitudes, Qubit.single_qubit_gates["X"], qubit_1_index, [qubit_2_index])
-        _apply_gate(self.amplitudes, Qubit.single_qubit_gates["X"], qubit_2_index, [qubit_1_index])
+        _apply_gate(self.amplitudes, self._single_qubit_gates["X"], qubit_2_index, [qubit_1_index])
+        _apply_gate(self.amplitudes, self._single_qubit_gates["X"], qubit_1_index, [qubit_2_index])
+        _apply_gate(self.amplitudes, self._single_qubit_gates["X"], qubit_2_index, [qubit_1_index])
 
     def multi_controlled_gate(self, gate, qubit_index, control_index_list):
         """Applies a specific gate to a qubit with controls of other qubits.
@@ -264,9 +256,9 @@ class Qubit:
             control_index_list: List of indices of the control qubits,
                 the index in this list should starts from 0.
         """
-        assert gate in Qubit.single_qubit_gates.keys(), \
+        assert gate in self._single_qubit_gates.keys(), \
             'Gate should be one from "X, Y, Z, H, S, T, Id, SDagger, TDagger"'
-        _apply_gate(self.amplitudes, Qubit.single_qubit_gates[gate], qubit_index, control_index_list)
+        _apply_gate(self.amplitudes, self._single_qubit_gates[gate], qubit_index, control_index_list)
 
     def multi_controlled_rx(self, theta, qubit_index, control_index_list):
         """Applies the RX gate to a qubit with controls of other qubits.
@@ -344,7 +336,7 @@ class Qubit:
         measure_result = _measure(self.amplitudes, [qubit_index])
         _collapse(self.amplitudes, [qubit_index], measure_result)
         if measure_result[0] == "1":
-            _apply_gate(self.amplitudes, Qubit.single_qubit_gates["X"], qubit_index)
+            _apply_gate(self.amplitudes, self._single_qubit_gates["X"], qubit_index)
 
     def reset_all(self):
         """Reset all qubits to |0>."""
@@ -373,10 +365,10 @@ class Qubit:
         Returns:
             "0" or "1" as type string. Represent the state |0> and |1> .
         """
-        _apply_gate(self.amplitudes, Qubit.single_qubit_gates["H"], qubit_index)
+        _apply_gate(self.amplitudes, self._single_qubit_gates["H"], qubit_index)
         measure_result = _measure(self.amplitudes, [qubit_index])
         _collapse(self.amplitudes, [qubit_index], measure_result)
-        _apply_gate(self.amplitudes, Qubit.single_qubit_gates["H"], qubit_index)
+        _apply_gate(self.amplitudes, self._single_qubit_gates["H"], qubit_index)
         return measure_result[0]
 
     def measure_y(self, qubit_index):
@@ -388,11 +380,11 @@ class Qubit:
         Returns:
             "0" or "1" as type string. Represent the state |0> and |1> .
         """
-        _apply_gate(self.amplitudes, np.matmul(Qubit.single_qubit_gates["H"], Qubit.single_qubit_gates["SDagger"]),
+        _apply_gate(self.amplitudes, np.matmul(self._single_qubit_gates["H"], self._single_qubit_gates["SDagger"]),
                     qubit_index)
         measure_result = _measure(self.amplitudes, [qubit_index])
         _collapse(self.amplitudes, [qubit_index], measure_result)
-        _apply_gate(self.amplitudes, np.matmul(Qubit.single_qubit_gates["S"], Qubit.single_qubit_gates["H"]),
+        _apply_gate(self.amplitudes, np.matmul(self._single_qubit_gates["S"], self._single_qubit_gates["H"]),
                     qubit_index)
         return measure_result[0]
 
@@ -417,9 +409,14 @@ class Qubit:
                 the index in this list should starts from 0.
 
         Returns:
-            A list with elements "0" or "1" as type string. Represent the
-            state |0> and |1> . The order of elements is consistent with
-            qubit_index_list.
+            A list with elements "0" or "1" as type string, which represent the
+            state |0> and |1> for qubits with the descending order.
+
+            example:
+
+            ['1', '0', '0']
+
+            The '1' represents the state |1> for the qubit with the biggest index.
         """
         measure_result = _measure(self.amplitudes, qubit_index_list)
         _collapse(self.amplitudes, qubit_index_list, measure_result)
@@ -437,7 +434,9 @@ class Qubit:
 
         Returns:
             A dict with keys as measured states and values as numbers of
-            times measured in that states.
+            times measured in that states. The qubits represented are
+            in descending order.
+
             example:
 
             {'00': 490, '11': 510}

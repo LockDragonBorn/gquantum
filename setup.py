@@ -13,7 +13,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="gquantum",
-    version="0.1.0",
+    version="0.2.0",
     keywords=("quantum computer simulator", "quantum computing", "quantum information", "grace quantum"),
     description="Grace quantum computer simulator",
     long_description="Grace quantum computer simulator",

@@ -1,22 +1,17 @@
 #!/usr/bin/env python
 #-*- coding:utf-8 -*-
 
-#############################################
-# File Name: setup.py
-# Author: mage
-# Mail: mage@woodcol.com
-# Created Time:  2018-1-23 19:17:34
-#############################################
-
-
 from setuptools import setup, find_packages
+
+with open("README.md", "r") as fh:
+    long_description = fh.read()
 
 setup(
     name="gquantum",
     version="0.2.0",
     keywords=("quantum computer simulator", "quantum computing", "quantum information", "grace quantum"),
-    description="Grace quantum computer simulator",
-    long_description="Grace quantum computer simulator",
+    description="Light-weighted quantum computing tool supports 31 qubits.",
+    long_description=long_description,
     license="MIT Licence",
 
     url="https://github.com/YangzheLiu/gquantum",

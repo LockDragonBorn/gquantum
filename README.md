@@ -5,8 +5,9 @@ Version](https://img.shields.io/pypi/v/gquantum.svg?style=for-the-badge)](https:
 [![License](https://img.shields.io/pypi/l/gquantum.svg?style=for-the-badge)](https://pypi.python.org/pypi/gquantum/)
 [![GitHub
 stars](https://img.shields.io/github/stars/yangzheliu/gquantum.svg?style=for-the-badge&label=Stars)](https://github.com/YangzheLiu/gquantum)
+[![Documentation](https://img.shields.io/badge/api-reference-blue.svg?style=for-the-badge)](https://gquantum.readthedocs.io/en/latest/index.html)
 
-GQuantum(Grace Quantum Computer Simulator) is an open-source quantum computer simulator with least dependent APIs. It simulates arbitrary quantum circuits with at most 31 qubits. (本项目所有说明包含中文版 ，请往下翻。)
+GQuantum(Grace Quantum Computer Simulator) is an open-source quantum computer simulator with least dependent APIs. It simulates arbitrary quantum circuits with at most 31 qubits. (本项目说明包含中文版 ，请往下翻。)
 
 ## Installing
 
@@ -45,6 +46,7 @@ print(qu.measure(1))
 ```
 
 Because these two qubits above are entangled, the outputs of measurements should be both |0> or |1>.
+To learn more, please check the [API Document](https://gquantum.readthedocs.io/en/latest/index.html)
 
 ## Runtime Analysis
 
@@ -98,7 +100,8 @@ print(qu.measure(0))
 print(qu.measure(1))
 ```
 
-由于这两个量子位处于纠缠状态，当测量第一个量子位时第二个量子位跟着坍缩。所以两个量子位测量结果将同时是 |0> 或者 |1>.
+由于这两个量子位处于纠缠状态，当测量第一个量子位时第二个量子位跟着坍缩。所以两个量子位测量结果将同时是 |0> 或者 |1>。
+更多信息请查看[API 文档](https://gquantum.readthedocs.io/en/latest/index.html)。
 
 ## 性能测试
 

@@ -12,6 +12,7 @@ setup(
     keywords=("quantum computer simulator", "quantum computing", "quantum information", "grace quantum"),
     description="Light-weighted quantum computing tool supports 31 qubits.",
     long_description=long_description,
+    long_description_content_type="text/markdown",
     license="MIT Licence",
 
     url="https://github.com/YangzheLiu/gquantum",
